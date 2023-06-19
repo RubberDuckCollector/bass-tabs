@@ -17,9 +17,9 @@ def main():
     def e_string_proc():
         e_string_note = e_string_box.value
         notes[0][0] += e_string_note + "-"
-        notes[1][0] += "--"
-        notes[2][0] += "--"
-        notes[3][0] += "--"
+        notes[1][0] += (len(e_string_note) * "-") + "-"
+        notes[2][0] += (len(e_string_note) * "-") + "-"
+        notes[3][0] += (len(e_string_note) * "-") + "-"
         print(notes[0])
         print(notes[1])
         print(notes[2])
@@ -28,10 +28,10 @@ def main():
     
     def a_string_proc():
         a_string_note = a_string_box.value
-        notes[0][0] += "--"
+        notes[0][0] += (len(a_string_note) * "-") + "-"
         notes[1][0] += a_string_note + "-"
-        notes[2][0] += "--"
-        notes[3][0] += "--"
+        notes[2][0] += (len(a_string_note) * "-") + "-"
+        notes[3][0] += (len(a_string_note) * "-") + "-"
         print(notes[0])
         print(notes[1])
         print(notes[2])
@@ -40,10 +40,10 @@ def main():
 
     def d_string_proc():
         d_string_note = d_string_box.value
-        notes[0][0] += "--"
-        notes[1][0] += "--"
+        notes[0][0] += (len(d_string_note) * "-") + "-"
+        notes[1][0] += (len(d_string_note) * "-") + "-"
         notes[2][0] += d_string_note + "-"
-        notes[3][0] += "--"
+        notes[3][0] += (len(d_string_note) * "-") + "-"
         print(notes[0])
         print(notes[1])
         print(notes[2])
@@ -52,9 +52,9 @@ def main():
     
     def g_string_proc():
         g_string_note = g_string_box.value
-        notes[0][0] += "--"
-        notes[1][0] += "--"
-        notes[2][0] += "--"
+        notes[0][0] += (len(g_string_note) * "-") + "-"
+        notes[1][0] += (len(g_string_note) * "-") + "-"
+        notes[2][0] += (len(g_string_note) * "-") + "-"
         notes[3][0] += g_string_note + "-"
         print(notes[0])
         print(notes[1])
@@ -137,7 +137,7 @@ def main():
     # the text needs to be black because otherwise it's white by default (and on a white bg)
     # cannot do something like:
     # `test_box = TextBox(app, text="hello", grid=[0, 0]).text_color="black`
-    # calling .value on `test_box` like with the boxes above will return an error
+    # calling .value on `test_box` like this will return an error
     # because python will think it has no attribute "value"
     # you have to change the text color after the fact to avoid calling a func call on a text box's val, instead of the val itself
 
